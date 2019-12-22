@@ -1,0 +1,20 @@
+server:
+  port: 5003
+
+# datasoure默认使用JDBC
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: jiangxue
+    password: jx123456
+    url: jdbc:mysql://47.97.195.85:3306/jiangxue?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: 127.0.0.1:5672
+      password: jx
+      username: jx
+      queue: zipkin
+  storage:
+    type: mysql

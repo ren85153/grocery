@@ -1,0 +1,7 @@
+FROM java:8-jre
+MAINTAINER Jx <richard_wai@163.com>
+
+ADD ./jar/jx-eureka.jar /app/
+CMD ["java", "-Xmx200m", "-jar", "/app/jx-eureka.jar"]
+
+EXPOSE 1025

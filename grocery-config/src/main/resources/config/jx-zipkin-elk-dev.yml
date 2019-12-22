@@ -1,0 +1,22 @@
+server:
+  port: 5002
+
+zipkin:
+  collector:
+    rabbitmq:
+#      addresses: 127.0.0.1:5672
+      addresses: 47.97.195.85:5672
+      password: jx
+      username: jx
+      queue: zipkin
+  storage:
+    type: elasticsearch
+    elasticsearch:
+#      hosts: 127.0.0.1:9200
+      hosts: master:9200
+#      cluster: elasticsearch
+      cluster: docker-cluster
+      index: zipkin
+      max-requests: 64
+      index-shards: 5
+      index-replicas: 1

@@ -1,0 +1,28 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: grocery-eureka-server
+
+security:
+  basic:
+    enabled: true # 启用身份认证
+  user:
+    name: jx # 定义用户名
+    password: jiangxue # 定义密码
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  instance:
+    ip-address: localhost
+    prefer-ip-address: true
+    hostname: ${eureka.instance.ip-address}
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+  server:  #配置属性，但由于 Eureka 自我保护模式以及心跳周期长的原因，经常会遇到 Eureka Server 不剔除已关停的节点的问题
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000

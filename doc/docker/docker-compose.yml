@@ -1,0 +1,46 @@
+version: '2'
+services:
+  jx-eureka:
+    build:
+      context: ./
+      dockerfile: Dockerfile-eureka
+    restart: always
+    ports:
+      - 1025:1025
+
+  jx-config:
+    links:
+      - jx-eureka:eureka
+    build:
+      context: ./
+      dockerfile: Dockerfile-config
+    restart: always
+
+  jx-gateway:
+    links:
+      - jx-eureka:eureka
+      - jx-auth:auth
+    build:
+      context: ./
+      dockerfile: Dockerfile-gateway
+    restart: always
+    ports:
+      - 9999:9999
+
+  jx-auth:
+    links:
+      - jx-eureka:eureka
+    build:
+      context: ./
+      dockerfile: Dockerfile-auth
+    restart: always
+    ports:
+      - 3000:3000
+
+  jx-upms-service:
+    links:
+      - jx-eureka:eureka
+    build:
+      context: ./
+      dockerfile: Dockerfile-upms
+    restart: always

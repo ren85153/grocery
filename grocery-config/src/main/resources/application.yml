@@ -1,0 +1,71 @@
+server:
+  port: 4001
+
+spring:
+  application:
+    name: grocery-config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+        # 目前設置配置文件本地化
+          search-locations: classpath:/config
+          #生产配置
+#          search-locations: file:/jx/jx-config/config
+#        git:
+#          uri: xxx.git
+#          default-label: ${spring.profiles.active}   #解决监控down
+
+# 关闭安全管理
+management:
+  security:
+    enabled: false
+endpoints:
+  health:
+    sensitive: false
+
+---
+spring:
+  profiles: native
+  rabbitmq:
+    host: 47.97.195.85
+    port: 5672
+    username: jx
+    password: jx
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    registry-fetch-interval-seconds: 10
+
+---
+spring:
+  profiles: prd
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5682
+    username: jx
+    password: jx
+  cloud:
+    config:
+      retry:
+        initial-interval: 3000
+        multiplier: 1.5
+        max-interval: 20000
+        max-attempts: 6
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 47.97.195.85
+    hostname: ${eureka.instance.ip-address}
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+    non-secure-port: ${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
