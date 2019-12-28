@@ -1,7 +1,7 @@
 FROM java:8-jre
-MAINTAINER Jx <richard_wai@163.com>
+MAINTAINER qiudaoyu <5459514@qq.com>
 
-ADD ./jar/jx-config.jar /app/
-CMD ["java", "-Xmx200m", "-jar", "/app/jx-config.jar"]
+ADD ./jar/grocery-config.jar /app/
+CMD ["java", "-Xmx200m", "-jar", "/app/grocery-config.jar"]
 
 EXPOSE 4001

@@ -41,7 +41,7 @@ eureka:
     lease-expiration-duration-in-seconds: 20
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://kfh:kfhpasswd@localhost:8761/eureka
     registry-fetch-interval-seconds: 10
 
 ---
@@ -68,4 +68,4 @@ eureka:
     non-secure-port: ${server.port}
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://kfh:kfhpasswd@localhost:8761/eureka

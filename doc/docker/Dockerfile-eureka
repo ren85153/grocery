@@ -1,7 +1,7 @@
 FROM java:8-jre
-MAINTAINER Jx <richard_wai@163.com>
+MAINTAINER qiudaoyu <5459514@qq.com>
 
-ADD ./jar/jx-eureka.jar /app/
-CMD ["java", "-Xmx200m", "-jar", "/app/jx-eureka.jar"]
+ADD ./jar/grocery-eureka.jar /app/
+CMD ["java", "-Xmx200m", "-jar", "/app/grocery-eureka.jar"]
 
 EXPOSE 1025

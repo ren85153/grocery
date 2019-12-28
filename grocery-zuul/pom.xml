@@ -3,11 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>grocery-gateway</artifactId>
-    <!--<version>${grocery.version}</version>-->
+    <artifactId>grocery-zuul</artifactId>
     <packaging>jar</packaging>
 
-    <name>grocery-gateway</name>
+    <name>grocery-zuul</name>
     <description>服务网关</description>
 
     <parent>

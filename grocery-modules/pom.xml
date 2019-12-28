@@ -20,8 +20,6 @@
     </properties>
     
     <modules>
-        <module>grocery-daemon-service</module>
-        <module>grocery-mc-service</module>
         <module>grocery-sso-client-demo</module>
         <module>grocery-ali-oss</module>
     </modules>

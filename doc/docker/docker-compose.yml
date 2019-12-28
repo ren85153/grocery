@@ -1,6 +1,6 @@
 version: '2'
 services:
-  jx-eureka:
+  grocery-eureka:
     build:
       context: ./
       dockerfile: Dockerfile-eureka
@@ -8,39 +8,31 @@ services:
     ports:
       - 1025:1025
 
-  jx-config:
+  grocery-config:
     links:
-      - jx-eureka:eureka
+      - grocery-eureka:eureka
     build:
       context: ./
       dockerfile: Dockerfile-config
     restart: always
 
-  jx-gateway:
+  grocery-zuul:
     links:
-      - jx-eureka:eureka
-      - jx-auth:auth
+      - grocery-eureka:eureka
+      - grocery-auth:auth
     build:
       context: ./
-      dockerfile: Dockerfile-gateway
+      dockerfile: Dockerfile-zuul
     restart: always
     ports:
       - 9999:9999
 
-  jx-auth:
+  grocery-auth:
     links:
-      - jx-eureka:eureka
+      - grocery-eureka:eureka
     build:
       context: ./
       dockerfile: Dockerfile-auth
     restart: always
     ports:
       - 3000:3000
-
-  jx-upms-service:
-    links:
-      - jx-eureka:eureka
-    build:
-      context: ./
-      dockerfile: Dockerfile-upms
-    restart: always

@@ -1,9 +1,0 @@
-FROM java:8-jre
-MAINTAINER Jx <richard_wai@163.com>
-
-ADD ./jar/jx-gateway.jar /app/
-ADD ./jar/pinpoint-agent /app/pinpoint-agent
-
-CMD ["java", "-Xmx500m", "-javaagent:/app/pinpoint-agent/pinpoint-bootstrap-1.5.0.jar", "-Dpinpoint.agentId=jx-gateway", "-Dpinpoint.applicationName=GATEWAY", "-jar", "/app/jx-gateway.jar"]
-
-EXPOSE 9999

@@ -25,7 +25,7 @@ eureka:
     lease-expiration-duration-in-seconds: 20
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://kfh:kfhpasswd@localhost:8761/eureka
     registry-fetch-interval-seconds: 10
 #认证服务器地址
 security:
@@ -40,7 +40,7 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://kfh:kfhpasswd@localhost:8761/eureka
 
 #建议使用nginx负载均衡
 security:

@@ -1,13 +1,11 @@
 package com.ribuluo.common.entity;
 
-import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import lombok.Data;
@@ -23,9 +21,13 @@ import java.time.LocalDateTime;
  */
 @TableName("tb_dic_upms")
 @Data
-public class DictionaryUpmsEntity  {
+public class DictionaryUpmsEntity implements  Serializable {
 
-    // 0:启用状态
+    /** 
+	 * serialVersionUID
+	 */  
+	private static final long serialVersionUID = 5328688389728484317L;
+	// 0:启用状态
     public  static  int STATUS_UP = 0;
     // 禁用状态
     public static  int STATUS_CLOSE = 1;

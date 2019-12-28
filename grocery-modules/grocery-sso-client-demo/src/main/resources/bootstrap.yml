@@ -39,7 +39,7 @@ eureka:
     lease-expiration-duration-in-seconds: 20
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://kfh:kfhpasswd@localhost:8761/eureka
 
 ---
 spring:
@@ -49,4 +49,4 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://kfh:kfhpasswd@localhost:8761/eureka
