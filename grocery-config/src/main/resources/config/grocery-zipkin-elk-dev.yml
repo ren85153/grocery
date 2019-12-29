@@ -5,18 +5,16 @@ zipkin:
   collector:
     rabbitmq:
       addresses: 47.93.44.246:5672
-      password: grocery
-      username: 123456
+      password: 123456
+      username: grocery
       virtual-host: grocery_vhost
       queue: zipkin
-      
   storage:
+    StorageComponent: elasticsearch
     type: elasticsearch
     elasticsearch:
-#      hosts: 127.0.0.1:9200
-      hosts: master:9200
-#      cluster: elasticsearch
-      cluster: docker-cluster
+      hosts: 47.93.44.246:9200
+      cluster: my-search
       index: zipkin
       max-requests: 64
       index-shards: 5

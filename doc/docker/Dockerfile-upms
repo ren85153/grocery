@@ -1,0 +1,6 @@
+FROM java:8-jre
+MAINTAINER qiudaoyu <5459514@qq.com>
+
+ADD ./jar/grocery-upms-service.jar /app/
+
+CMD ["java", "-Xmx200m", "-jar", "/app/grocery-upms-service.jar"]

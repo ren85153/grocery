@@ -2,16 +2,12 @@ package com.ribuluo.admin.service.impl;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.ribuluo.admin.common.util.TreeUtil;
 import com.ribuluo.admin.mapper.SysMenuMapper;
-import com.ribuluo.admin.model.dto.MenuTree;
 import com.ribuluo.admin.model.entity.SysMenu;
 import com.ribuluo.admin.service.SysMenuService;
 import com.ribuluo.common.constant.CommonConstant;
 import com.ribuluo.common.util.Assert;
 import com.ribuluo.common.vo.MenuVO;
-import com.xiaoleilu.hutool.collection.CollUtil;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;

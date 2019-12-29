@@ -19,8 +19,8 @@ grocery
 ├── grocery-modules -- 微服务模块
 ├    ├── grocery-upms-service -- 权限管理提供[4000]
 └── grocery-visual  -- 图形化模块 
-     ├── grocery-zipkin-elk -- zipkin、ELK监控[5002、5601]
-     └── grocery-cache-cloud -- 缓存管理、统一监控[5005]
+     ├── grocery-zipkin-elk -- zipkin、ELK监控[5002]
+     ├── grocery-zipkin-db -- zipkin、db监控[5002]
 ```
 启动顺序:
 eureka

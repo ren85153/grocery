@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * @author
  */
-@FeignClient(name = "jx-upms-service", fallback = MenuServiceFallbackImpl.class)
+@FeignClient(name = "grocey-upms-service", fallback = MenuServiceFallbackImpl.class)
 public interface MenuService {
 
     /**

@@ -13,8 +13,8 @@ zipkin:
   collector:
     rabbitmq:
       addresses: 47.93.44.246:5672
-      password: grocery
-      username: 123456
+      password: 123456
+      username: grocery
       virtual-host: grocery_vhost
       queue: zipkin
   storage:
