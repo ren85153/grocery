@@ -101,7 +101,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     @Bean
     public TokenStore redisTokenStore() {
         RedisTokenStore tokenStore = new RedisTokenStore(redisConnectionFactory);
-        tokenStore.setPrefix(SecurityConstants.JX_PREFIX);
+        tokenStore.setPrefix(SecurityConstants.GROCERY_PREFIX);
         return tokenStore;
     }
 
@@ -114,7 +114,7 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
     public TokenEnhancer tokenEnhancer() {
         return (accessToken, authentication) -> {
             final Map<String, Object> additionalInfo = new HashMap<>(2);
-            additionalInfo.put("license", SecurityConstants.JX_LICENSE);
+            additionalInfo.put("license", SecurityConstants.GROCERY_LICENSE);
             UserDetailsImpl user = (UserDetailsImpl) authentication.getUserAuthentication().getPrincipal();
             if (user != null) {
                 additionalInfo.put("userId", user.getUserId());

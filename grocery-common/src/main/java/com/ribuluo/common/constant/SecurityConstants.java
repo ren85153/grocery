@@ -8,7 +8,7 @@ public interface SecurityConstants {
     /**
      * 前缀
      */
-    String JX_PREFIX = "jx_";
+    String GROCERY_PREFIX = "grocery_";
     /**
      * 用户信息头
      */
@@ -21,7 +21,7 @@ public interface SecurityConstants {
     /**
      * 项目的license
      */
-    String JX_LICENSE = "made by jx";
+    String GROCERY_LICENSE = "made by grocery";
     /**
      * 基础角色
      */

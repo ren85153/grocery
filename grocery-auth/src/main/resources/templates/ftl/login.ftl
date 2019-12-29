@@ -16,7 +16,7 @@
 
   <body>
     <div class="container form-margin-top">
-      <form class="form-signin" action="/authentication/form" method="post">
+      <form class="form-signin" action="/authentication/user" method="post">
         <h2 class="form-signin-heading" align="center">统一认证系统</h2>
         <input type="text" name="username" class="form-control form-margin-top" placeholder="账号" required autofocus>
         <input type="password" name="password" class="form-control" placeholder="密码" required>
@@ -25,7 +25,7 @@
     </div>
     <footer>
       <p>support by: </p>
-      <p>email: <a href="mailto:richard_wai@163.com">richard_wai@163.com</a>.</p>
+      <p>email: <a href="mailto:richard_wai@163.com">5459514@qq.com</a>.</p>
     </footer>
   </body>
 </html>

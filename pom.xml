@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ribuluo</groupId>
@@ -40,7 +38,6 @@
         <ttl.version>2.2.0</ttl.version>
         <sharding-jdbc-core-spring-boot-starter.version>2.0.1</sharding-jdbc-core-spring-boot-starter.version>
         <velocity-engine-core.version>2.0</velocity-engine-core.version>
-        <qiniu.version>[7.2.0, 7.2.99]</qiniu.version>
         <kaptcha.version>0.0.9</kaptcha.version>
         <javadoc.version>3.0.0</javadoc.version>
         <spring-boot-admin-server.version>1.5.7</spring-boot-admin-server.version>
@@ -98,8 +95,8 @@
         <module>grocery-eureka</module>
         <module>grocery-zuul</module>
         <module>grocery-modules</module>
-        
-    </modules>
+    <module>grocery-hystrix</module>
+  </modules>
 
     <dependencyManagement>
         <dependencies>

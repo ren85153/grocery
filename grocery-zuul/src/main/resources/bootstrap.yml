@@ -1,6 +1,6 @@
 spring:
   application:
-    name: grocery-gateway
+    name: grocery-zuul
   profiles:
     active: dev
   cloud:

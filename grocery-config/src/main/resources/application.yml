@@ -30,10 +30,11 @@ endpoints:
 spring:
   profiles: native
   rabbitmq:
-    host: 47.97.195.85
+    host: 47.93.44.246
     port: 5672
-    username: jx
-    password: jx
+    username: grocery
+    password: 123456
+    virtual-host: grocery_vhost
 eureka:
   instance:
     prefer-ip-address: true
@@ -48,10 +49,11 @@ eureka:
 spring:
   profiles: prd
   rabbitmq:
-    host: 127.0.0.1
-    port: 5682
-    username: jx
-    password: jx
+    host: 47.93.44.246
+    port: 5672
+    username: grocery
+    password: 123456
+    virtual-host: grocery_vhost
   cloud:
     config:
       retry:

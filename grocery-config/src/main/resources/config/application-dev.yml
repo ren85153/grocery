@@ -11,14 +11,15 @@ server:
 spring:
   redis:
     remote: false       #cachecloud 获取
-    host: 47.97.195.85
-    port: 26379
+    host: 47.93.44.246
+    port: 6379
     password: 123456
   rabbitmq:
-    host: 47.97.195.85
+    host: 47.93.44.246
     port: 5672
-    username: jx
-    password: jx
+    username: grocery
+    password: 123456
+    virtual-host: grocery_vhost
   http:
     multipart:
       max-file-size: 1000MB
@@ -31,7 +32,7 @@ redis:
 ribbon:
   eager-load:
     enabled: true
-    clients: grocery-auth
+    clients: grocery-auth,grocery-upms-service
   Httpclient:
     enabled: false
   OkHttp:

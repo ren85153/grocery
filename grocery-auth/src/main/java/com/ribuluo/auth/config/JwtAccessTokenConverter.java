@@ -14,7 +14,7 @@ public class JwtAccessTokenConverter extends org.springframework.security.oauth2
     @Override
     public Map<String, ?> convertAccessToken(OAuth2AccessToken token, OAuth2Authentication authentication) {
         Map<String, Object> representation = (Map<String, Object>) super.convertAccessToken(token, authentication);
-        representation.put("license", SecurityConstants.JX_LICENSE);
+        representation.put("license", SecurityConstants.GROCERY_LICENSE);
         return representation;
     }
 
