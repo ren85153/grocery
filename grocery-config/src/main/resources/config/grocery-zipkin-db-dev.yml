@@ -1,0 +1,21 @@
+server:
+  port: 5003
+
+# datasoure默认使用JDBC
+spring:
+ datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: M53y8kjp_&cL
+    url: jdbc:mysql://47.93.44.246:3306/grocery?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: 47.93.44.246:5672
+      password: grocery
+      username: 123456
+      virtual-host: grocery_vhost
+      queue: zipkin
+  storage:
+    type: mysql

@@ -95,8 +95,8 @@
         <module>grocery-eureka</module>
         <module>grocery-zuul</module>
         <module>grocery-modules</module>
-    <module>grocery-hystrix</module>
-  </modules>
+        <module>grocery-visual</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>

@@ -1,0 +1,23 @@
+server:
+  port: 5002
+
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: 47.93.44.246:5672
+      password: grocery
+      username: 123456
+      virtual-host: grocery_vhost
+      queue: zipkin
+      
+  storage:
+    type: elasticsearch
+    elasticsearch:
+#      hosts: 127.0.0.1:9200
+      hosts: master:9200
+#      cluster: elasticsearch
+      cluster: docker-cluster
+      index: zipkin
+      max-requests: 64
+      index-shards: 5
+      index-replicas: 1
