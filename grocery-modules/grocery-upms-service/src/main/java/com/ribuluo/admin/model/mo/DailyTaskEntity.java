@@ -7,7 +7,12 @@ import java.io.Serializable;
 @Data
 public class DailyTaskEntity implements Serializable {
 
-    /**
+    /** 
+	 * serialVersionUID
+	 */  
+	private static final long serialVersionUID = -8277191772725648015L;
+
+	/**
      * 用户id
      */
     private String userId;

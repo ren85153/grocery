@@ -165,4 +165,26 @@ public class NewJGPushMO {
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
+
+	public String getPage() {
+		return page;
+	}
+
+	public void setPage(String page) {
+		this.page = page;
+	}
+
+	public void setRegistrationIds(List<String> registrationIds) {
+		this.registrationIds = registrationIds;
+	}
+
+	public void setAlias(List<String> alias) {
+		this.alias = alias;
+	}
+
+	public void setTags(List<String> tags) {
+		this.tags = tags;
+	}
+    
+    
 }

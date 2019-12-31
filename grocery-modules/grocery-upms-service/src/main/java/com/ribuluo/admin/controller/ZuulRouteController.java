@@ -46,7 +46,7 @@ public class ZuulRouteController extends BaseController {
      * @return 分页对象
      */
     @RequestMapping("/page")
-    public Page page(@RequestParam Map<String, Object> params) {
+    public Page<SysZuulRoute> page(@RequestParam Map<String, Object> params) {
         params.put(CommonConstant.DEL_FLAG, CommonConstant.STATUS_NORMAL);
         return sysZuulRouteService.selectPage(new Query<>(params), new EntityWrapper<>());
     }
