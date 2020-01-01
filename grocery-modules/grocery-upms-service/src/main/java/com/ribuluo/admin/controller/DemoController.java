@@ -42,7 +42,7 @@ public class DemoController {
 	 */
     @NoVerify
     @ApiOperation(value = "详情接口", notes = "2.0 saury",code = 200,produces = "application/json",response=R.class)
-    @ApiImplicitParam(name = "wid", value = "wid示例：sdfasdfasdkfjlsdjf", required = true, paramType = "path")
+    @ApiImplicitParam(name = "wid", value = "wid示例：1234567", required = true, paramType = "path")
     @GetMapping("example/{wid}")
     public R<String> exampleDetail(@PathVariable String wid){
         try{

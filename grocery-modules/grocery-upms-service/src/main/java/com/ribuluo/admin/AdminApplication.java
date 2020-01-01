@@ -6,9 +6,15 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableAsync;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 /**
- * @author
+* <p>Title: AdminApplication</p>  
+* Description:
+* @author saury  
+* @date 2020年1月1日
  */
+@EnableSwagger2 	
 @EnableAsync
 @SpringBootApplication
 @EnableDiscoveryClient
