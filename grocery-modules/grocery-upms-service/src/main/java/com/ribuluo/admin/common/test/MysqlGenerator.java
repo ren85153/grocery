@@ -59,11 +59,11 @@ public class MysqlGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://47.97.195.85:3306/jiangxueTest?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false");
+        dsc.setUrl("jdbc:mysql://47.93.44.246:8066/grocery?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("jxtest");
-        dsc.setPassword("jxtest");
+        dsc.setUsername("root");
+        dsc.setPassword("root");
 //        dsc.setTypeConvert(new MySqlTypeConvert(){
 //            // 自定义数据库表字段类型转换【可选】
 //            @Override
