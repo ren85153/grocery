@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 /**
  * @author
  */
-@FeignClient(name = "jx-upms-service", fallback = UserServiceFallbackImpl.class)
+@FeignClient(name = "grocery-upms-service", fallback = UserServiceFallbackImpl.class)
 public interface UserService {
     /**
      * 通过用户名查询用户、角色信息
