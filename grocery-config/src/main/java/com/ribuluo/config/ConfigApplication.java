@@ -19,6 +19,6 @@ public class ConfigApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(ConfigApplication.class, args);
-        System.err.println("========================Config启动成功========================");
+        System.err.println("========================Config启动成功==============================");
     }
 }

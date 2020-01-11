@@ -7,7 +7,6 @@ redis:
     expiration: 3600
 swagger:
   enable: true
-
 # sleuth配置
 spring:
   zipkin:
@@ -50,4 +49,4 @@ task:
       queueCapacity: 300
 logging:
   level:
-    com.ribuluo.admin.mapper: debug
+    com.ribuluo.user.mapper: debug

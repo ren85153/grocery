@@ -62,7 +62,7 @@ spring:
         max-interval: 20000
         max-attempts: 6
 eureka:
-  instance:
+  instance:   
     prefer-ip-address: true
     ip-address: 47.97.195.85
     hostname: ${eureka.instance.ip-address}

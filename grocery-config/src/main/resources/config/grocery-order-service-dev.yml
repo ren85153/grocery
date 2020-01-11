@@ -50,4 +50,4 @@ task:
       queueCapacity: 300
 logging:
   level:
-    com.ribuluo.admin.mapper: debug
+    com.ribuluo.order.mapper: debug

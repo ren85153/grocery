@@ -1,7 +1,7 @@
 package com.ribuluo.zuul.component.config;
 
 import com.ribuluo.common.bean.config.FilterIgnorePropertiesConfig;
-import com.ribuluo.zuul.component.handler.JxAccessDeniedHandler;
+import com.ribuluo.zuul.component.handler.AccessDeniedHandler;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -28,7 +28,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Autowired
     private OAuth2WebSecurityExpressionHandler expressionHandler;
     @Autowired
-    private JxAccessDeniedHandler jxAccessDeniedHandler;
+    private AccessDeniedHandler accessDeniedHandler;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -44,7 +44,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
         resources.expressionHandler(expressionHandler);
-        resources.accessDeniedHandler(jxAccessDeniedHandler);
+        resources.accessDeniedHandler(accessDeniedHandler);
     }
 
     /**

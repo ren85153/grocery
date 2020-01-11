@@ -67,6 +67,11 @@
             <version>${velocity-engine-core.version}</version>
         </dependency>
         <!--mybatis-plus end -->
+            <dependency>  
+                <groupId>com.netflix.feign</groupId>  
+                <artifactId>feign-slf4j</artifactId>  
+                <version>8.14.4</version>  
+            </dependency>  
   </dependencies>
   
   <build>

@@ -24,7 +24,7 @@ import java.io.PrintWriter;
  */
 @Slf4j
 @Component
-public class JxAccessDeniedHandler extends OAuth2AccessDeniedHandler {
+public class AccessDeniedHandler extends OAuth2AccessDeniedHandler {
 
     @Autowired
     private ObjectMapper objectMapper;
