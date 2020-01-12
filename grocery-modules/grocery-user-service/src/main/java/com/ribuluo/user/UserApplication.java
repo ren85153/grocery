@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.scheduling.annotation.EnableAsync;
 
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * 
@@ -17,8 +15,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @date 2020年1月9日
  */
 
-@EnableSwagger2 	
-@EnableAsync
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients

@@ -9,9 +9,6 @@ spring:
       profile: ${spring.profiles.active}
       label: ${spring.profiles.active}
       uri: http://localhost:4001/
-feign:
-  hystrix:
-    enabled: true 
 ---
 spring:
   profiles: dev      

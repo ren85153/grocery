@@ -38,6 +38,10 @@
             <artifactId>grocery-common</artifactId>
             <version>${grocery.version}</version>
         </dependency>
+        <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-feign</artifactId>
+		</dependency>
         <!--MySQL-->
         <dependency>
             <groupId>mysql</groupId>
