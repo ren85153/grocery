@@ -1,13 +1,3 @@
-/**
- * Copyright (C),
- * FileName: JxGatewayApplication
- * Author:   weiyz
- * Date:     2018-2019
- * Description: JxAuthServerApplication
- * History:
- * <author>          <time>          <version>          <desc>
- * 作者姓名           修改时间           版本号              描述
- */
 package com.ribuluo.zuul;
 
 import org.springframework.boot.SpringApplication;

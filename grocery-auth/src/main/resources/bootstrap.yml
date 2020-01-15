@@ -22,7 +22,7 @@ eureka:
     lease-expiration-duration-in-seconds: 20
   client:
     serviceUrl:
-      defaultZone: http://kfh:kfhpasswd@localhost:8761/eureka
+      defaultZone: http://kfh:kfhpasswd@47.93.44.246:8761/eureka
     registry-fetch-interval-seconds: 10
 
 ---
