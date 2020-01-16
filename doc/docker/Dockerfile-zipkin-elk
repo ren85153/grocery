@@ -1,0 +1,5 @@
+FROM java:8-jre
+MAINTAINER qiudaoyu <5459514@qq.com>
+
+ADD ./jar/grocery-zipkin-elk /app/
+CMD ["java", "-Xmx200m", "-jar", "/app/grocery-zipkin-elk.jar"]

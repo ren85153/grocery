@@ -1,5 +1,7 @@
 package com.ribuluo.common.util;
 
+
+
 public class BaseRestResult<T> extends RestResult<T> {
     private int totalPageCount;//总页数
     private int size;//总记录数
@@ -9,7 +11,6 @@ public class BaseRestResult<T> extends RestResult<T> {
     protected BaseRestResult(String result, String reason, T data) {
         super(result, reason, data);
     }
-
     public BaseRestResult(int totalPageCount, int size, String result, String reason, T data) {
         super(result, reason, data);
         this.totalPageCount = totalPageCount;

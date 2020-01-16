@@ -8,7 +8,7 @@ spring:
       fail-fast: true
       profile: ${spring.profiles.active}
       label: ${spring.profiles.active}
-      uri: http://localhost:4001/
+      uri: http://47.93.44.246:4001/
 ---
 spring:
   profiles: dev      
@@ -19,5 +19,5 @@ eureka:
     lease-expiration-duration-in-seconds: 20
   client:
     serviceUrl:
-      defaultZone: http://kfh:kfhpasswd@localhost:8761/eureka
+      defaultZone: http://kfh:kfhpasswd@47.93.44.246:8761/eureka
     registry-fetch-interval-seconds: 10

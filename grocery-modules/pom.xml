@@ -22,7 +22,8 @@
     <modules>
         <module>grocery-ali-oss</module>
         <module>grocery-upms-service</module>
-    <module>grocery-modules-common</module>
+        <module>grocery-user-service</module>
+        <module>grocery-order-service</module>
   </modules>
     <dependencyManagement>
         <dependencies>

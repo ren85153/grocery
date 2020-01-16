@@ -1,7 +1,11 @@
 package com.ribuluo.user.service;
 
 
-import com.alibaba.fastjson.JSONObject;
+import java.util.List;
+
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.ribuluo.user.model.entity.GroUserC;
 
 /**
  * 
@@ -14,11 +18,21 @@ public interface UserService {
 
 	
 	/**
-	* Description:查询用户信息
-	* @Author saury
-	* @date 2020年1月10日 
-	* @param userId
-	* @return
+	 * Description:查询用户信息
+	 * @Author saury
+	 * @date 2020年1月10日 
+	 * @param userId
+	 * @return
 	 */
-	JSONObject findByUserId( String userId);
+	GroUserC findByUserId( String userId);
+	
+	void  updateUser(GroUserC user);
+	
+	void deleteById(String userId);
+	
+	List<GroUserC> getAllUsers();
+	
+	int  saveUser(GroUserC user);
+	
+	
 }

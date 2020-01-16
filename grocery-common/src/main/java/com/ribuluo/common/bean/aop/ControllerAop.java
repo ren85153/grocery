@@ -25,7 +25,7 @@ import java.util.Arrays;
 @Component
 public class ControllerAop {
 
-    @Pointcut("execution(public * com.ribuluo.admin.controller.*.*(..))")
+    @Pointcut("execution(public * com.ribuluo.*.controller.*.*(..))")
     public void pointCutR() {
     }
     /**
