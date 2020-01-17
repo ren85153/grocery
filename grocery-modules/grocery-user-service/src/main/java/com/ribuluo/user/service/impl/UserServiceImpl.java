@@ -49,10 +49,11 @@ public class UserServiceImpl  implements UserService{
     }
 
 	@Override
-    @Caching(  put = {@CachePut(value = "user",key = "#user.userId")},
+    @Caching(  put = {@CachePut(value = "user",key = "#user.userId.toString()")},
                evict = {@CacheEvict(value = "user-all", allEntries = true)})
-	public void updateUser(GroUserC user) {
+	public GroUserC updateUser(GroUserC user) {
 		groUserMapper.updateById(user);
+		return groUserMapper.selectById(user.getUserId());
 	}
 
 	@Override

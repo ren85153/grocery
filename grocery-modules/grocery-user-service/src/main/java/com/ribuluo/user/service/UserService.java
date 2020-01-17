@@ -25,8 +25,8 @@ public interface UserService {
 	 * @return
 	 */
 	GroUserC findByUserId( String userId);
-	
-	void  updateUser(GroUserC user);
+
+	GroUserC  updateUser(GroUserC user);
 	
 	void deleteById(String userId);
 	
