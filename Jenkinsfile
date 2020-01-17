@@ -5,7 +5,9 @@ pipeline {
         // 详情请阅 https://dev.tencent.com/help/knowledge-base/how-to-use-ci#agents
         label "java-8"
     }
-       
+ parameters{
+	       string(name: 'branch', defaultValue: 'develop', description: '源码分支')
+    }
     stages  {
       stage("环境") {
         steps {
@@ -27,15 +29,22 @@ pipeline {
       
         stage("检出") {
             steps {
-                sh 'ci-init'
-                checkout(
-                  [$class: 'GitSCM', branches: [[name: env.GIT_BUILD_REF]], 
-                  userRemoteConfigs: [[url: env.GIT_REPO_URL]]]
-                )
+                //sh 'ci-init'
+                //checkout(
+                 // [$class: 'GitSCM', branches: [[name: env.GIT_BUILD_REF]], 
+                 // userRemoteConfigs: [[url: env.GIT_REPO_URL]]]
+                //)
+		checkout([$class: 'GitSCM', 
+			  branches: [[name: '*/${branch}']], 
+			  doGenerateSubmoduleConfigurations: false, 
+			  extensions: [], 
+			  submoduleCfg: [], 
+			  userRemoteConfigs: [[url: 'https://github.com/kongfanhua/grocery.git']]]
+		)
             }
         }
 
- 		stage("构建") {
+ 	stage("构建") {
             steps {
                 echo "构建中..."
               	sh 'mvn install -Dmaven.test.skip=true'
@@ -47,10 +56,10 @@ pipeline {
         }
 
       
-		stage("部署"){
+	stage("部署"){
       	   steps {
               parallel "上传": {
-                    sh 'scp **/jx-upms-service/target/jx-upms-service.jar jiangxue@47.97.195.85:/jx/'
+                    //sh 'scp **/jx-upms-service/target/jx-upms-service.jar jiangxue@47.97.195.85:/jx/'
        //             sh 'sshpass -p wo201228 scp target/java-0.0.1-SNAPSHOT.jar root@47.97.195.85:/jx/jx-upms-service/'
        //         }, "运行": {
        //             sh 'sshpass -p wo201228  ssh root@47.97.195.85 cd /jx/jx-upms-service && rm /jx/jx-upms-service/nohup.out && sh start.sh'
