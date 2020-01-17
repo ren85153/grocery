@@ -24,7 +24,7 @@ public interface UserService {
 	 * @param userId
 	 * @return
 	 */
-	GroUserC findByUserId( String userId);
+	GroUserC findByUserId( String id);
 
 	GroUserC  updateUser(GroUserC user);
 	
@@ -32,7 +32,7 @@ public interface UserService {
 	
 	List<GroUserC> getAllUsers();
 	
-	int  saveUser(GroUserC user);
+	GroUserC  saveUser(GroUserC user);
 	
 	
 }

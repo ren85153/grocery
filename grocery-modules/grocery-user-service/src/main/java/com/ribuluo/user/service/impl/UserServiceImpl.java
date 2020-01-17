@@ -34,10 +34,10 @@ public class UserServiceImpl  implements UserService{
 	private  OrderFeginService orderFeginService;
 
 	@Override
-	@Cacheable(value = "user", unless="#result == null")
-	public GroUserC findByUserId(String userId) {
-		GroUserC  groUserC =groUserMapper.selectById(userId);
-		JSONObject resultOrder=orderFeginService.findByUserId(userId);
+	@Cacheable(value = "user",key = "'user:'+#id", unless="#result == null")
+	public GroUserC findByUserId(String id) {
+		GroUserC  groUserC =groUserMapper.selectById(id);
+		JSONObject resultOrder=orderFeginService.findByUserId(id);
 		System.err.println(resultOrder.toJSONString());
 		return groUserC;
 	}
@@ -49,25 +49,26 @@ public class UserServiceImpl  implements UserService{
     }
 
 	@Override
-    @Caching(  put = {@CachePut(value = "user",key = "#user.userId.toString()")},
-               evict = {@CacheEvict(value = "user-all", allEntries = true)})
+    @Caching(evict = {@CacheEvict(value = "user-all", allEntries = true),
+    		     @CacheEvict(value = "user",key = "'user:'+#user.id")})
 	public GroUserC updateUser(GroUserC user) {
 		groUserMapper.updateById(user);
-		return groUserMapper.selectById(user.getUserId());
+		return user;
 	}
 
 	@Override
-    @Caching(put =  { @CachePut(value = "user", key = "#user.userId")},
-            evict = {@CacheEvict(value = "user-all", allEntries = true)} )
+	@Caching(evict = {@CacheEvict(value = "user-all", allEntries = true),
+		     @CacheEvict(value = "user",key = "'user:'+#user.id")})
 	public void deleteById(String userId) {
 		groUserMapper.deleteById(userId);
 	}
 
 	 @Override
-	 @Caching(put = {@CachePut(value = "user", key = "#user.userId")},
+	 @Caching(put = {@CachePut(value = "user", key = "#user.id.toString()")},
 	          evict = {@CacheEvict(value = "user-all", allEntries = true)})
-	public int saveUser(GroUserC user) {
-		return groUserMapper.insert(user);
+	public GroUserC saveUser(GroUserC user) {
+		 groUserMapper.insert(user);
+		 return  user;
+		 
 	}
-
 }

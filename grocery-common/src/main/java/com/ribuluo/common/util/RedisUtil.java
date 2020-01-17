@@ -1,13 +1,3 @@
-/**
- * Copyright (C), 2018-2018,Kinglian Science and Technology Ltd
- * FileName: RedisUtil
- * Author:   weiyz
- * Date:     2018/6/15 16:09
- * Description: 操作redis工具类
- * History:
- * <author>          <time>          <version>          <desc>
- * 作者姓名           修改时间           版本号              描述
- */
 package com.ribuluo.common.util;
 
 import com.alibaba.fastjson.JSON;
@@ -19,11 +9,11 @@ import org.springframework.stereotype.Component;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 〈操作redis工具类〉
- *
- * @author weiyz
- * @create 2018/6/15
- * @since 1.0.0
+ * 
+* <p>Title: RedisUtil</p>  
+* Description: 〈操作redis工具类〉
+* @author saury  
+* @date 2020年1月17日
  */
 @Component
 public class RedisUtil {

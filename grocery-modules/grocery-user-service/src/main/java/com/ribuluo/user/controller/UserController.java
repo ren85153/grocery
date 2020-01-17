@@ -45,9 +45,9 @@ public class UserController {
 	* @param userId
 	* @return
 	 */
-    @GetMapping("/findByUserId/{userId}")
-    public GroUserC findByUserId(@PathVariable String userId) {
-          return  userService.findByUserId(userId);
+    @GetMapping("/findByUserId/{id}")
+    public GroUserC findByUserId(@PathVariable String id) {
+          return  userService.findByUserId(id);
     }
     
     @GetMapping("/getAllUsers")

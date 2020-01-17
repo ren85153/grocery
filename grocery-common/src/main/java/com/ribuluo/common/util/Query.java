@@ -6,7 +6,11 @@ import org.apache.commons.lang.StringUtils;
 import java.util.Map;
 
 /**
- * @author
+ * 分页
+* <p>Title: Query</p>  
+* Description:
+* @author saury  
+* @date 2020年1月17日
  */
 public class Query<T> extends Page<T> {
 

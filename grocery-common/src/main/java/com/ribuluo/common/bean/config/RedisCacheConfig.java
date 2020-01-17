@@ -16,7 +16,11 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.cache.interceptor.KeyGenerator;
+
 import java.lang.reflect.Method;
+import java.util.Collections;
+import org.springframework.cache.support.SimpleCacheManager;
+import org.springframework.cache.concurrent.ConcurrentMapCache;
 
 /**
  * 
@@ -61,21 +65,12 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
         return template;
     }
     
-    
-    @Bean
-    public KeyGenerator keyGenerator() {
-        return new KeyGenerator() {
-            @Override
-            public Object generate(Object target, Method method, Object... params) {
-                StringBuilder sb = new StringBuilder();
-                sb.append(target.getClass().getName());
-                sb.append(method.getName());
-                for (Object obj : params) {
-                    sb.append(obj.toString());
-                }
-                return sb.toString();
-            }
-        };
-    }
+
+	@Bean
+	public KeyGenerator cacheKeyGenerator(){//缓存key生成者
+		CacheKeyGenerator cacheKeyGenerator = new CacheKeyGenerator();
+		return cacheKeyGenerator;
+		
+	}
 
 }

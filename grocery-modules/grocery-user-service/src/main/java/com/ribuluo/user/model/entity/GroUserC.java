@@ -16,12 +16,18 @@ public class GroUserC  extends Model<GroUserC>{
 	 * serialVersionUID
 	 */  
 	private static final long serialVersionUID = -5267952513343999876L;
+	
+	/**
+	 * 主键
+	 */
+	@TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
 	/**
 	 * 用户ID
 	 */
-	@TableId(value = "user_id", type = IdType.AUTO)
-    private Integer userId;
+	@TableField(value = "user_id")
+    private String userId;
  
 	
 	/**
